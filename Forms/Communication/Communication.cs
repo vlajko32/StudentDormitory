@@ -30,6 +30,22 @@ namespace Forms.Communication
             receiver = new Receiver(socket);
         }
 
+        internal object GetFaculties()
+        {
+            Request request = new Request { Operation = Operation.GetAllFaculties };
+            sender.Send(request);
+            Response response = receiver.Receive();
+            return (List<Faculty>)response.Result;
+        }
+
+        internal object GetCities()
+        {
+            Request request = new Request { Operation = Operation.GetAllCities };
+            sender.Send(request);
+            Response response = receiver.Receive();
+            return (List<City>)response.Result;
+        }
+
         internal User Login(TextBox txtUsername, TextBox txtPassword)
         {
             Request request = new Request { Operation = Operation.Login, 
@@ -39,6 +55,9 @@ namespace Forms.Communication
             return (User)response.Result;
 
         }
+
+
+
 
         public static Communication Instance
         {

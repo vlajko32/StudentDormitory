@@ -1,10 +1,13 @@
-﻿using Domain;
+﻿using BrokerDB;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemOperations;
+using SystemOperations.CitySO;
+using SystemOperations.FacultySO;
 using SystemOperations.UserSO;
 
 namespace DBController
@@ -12,7 +15,7 @@ namespace DBController
     public class Controller
     {
         private SystemOperationsBase so;
-
+        Broker broker = new Broker();
         private static object _lock = new object();
 
         public User LoggedInUser { get; set; }
@@ -62,9 +65,30 @@ namespace DBController
             }
             return null;
         }
-        
+
+        public object GetAllCities()
+        {
+            so = new ReturnCitiesSO();
+            City city = new City();
+            so.ExecuteTemplate(entity: city);
+
+            List<City> cities = (List<City>)so.Result;
+
+            return cities;
 
 
+        }
 
+        public object GetAllFaculties()
+        {
+            so = new ReturnFacultiesSO();
+            Faculty faculty = new Faculty();
+            so.ExecuteTemplate(entity: faculty);
+
+            List<Faculty> faculties = (List<Faculty>)so.Result;
+            
+            return faculties;
+
+        }
     }
 }

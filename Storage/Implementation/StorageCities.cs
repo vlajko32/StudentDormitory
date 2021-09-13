@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common
+namespace Storage.Implementation
 {
-    public enum Operation
+    class StorageCities
     {
-        Login,
-        GetAllCities,
-        GetAllFaculties
+        
     }
 }

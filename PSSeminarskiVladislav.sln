@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerDB", "BrokerDB\Broker
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemOperations", "SystemOperations\SystemOperations.csproj", "{034B662E-B2EE-4157-9DA8-5DD40B3D9169}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage", "Storage\Storage.csproj", "{7AD9AB53-98C7-4D8C-9239-4B0E160121AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{034B662E-B2EE-4157-9DA8-5DD40B3D9169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034B662E-B2EE-4157-9DA8-5DD40B3D9169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034B662E-B2EE-4157-9DA8-5DD40B3D9169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD9AB53-98C7-4D8C-9239-4B0E160121AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD9AB53-98C7-4D8C-9239-4B0E160121AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD9AB53-98C7-4D8C-9239-4B0E160121AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD9AB53-98C7-4D8C-9239-4B0E160121AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

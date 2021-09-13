@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitySO\ReturnCitiesSO.cs" />
+    <Compile Include="FacultySO\ReturnFacultiesSO.cs" />
     <Compile Include="SystemOperationsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserSO\LoginUserSO.cs" />

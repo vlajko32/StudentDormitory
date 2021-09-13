@@ -56,7 +56,16 @@ namespace Server
                     {
                         server.Users.Add((User)response.Result);
                     }
+                  
+                    break;
+                case Operation.GetAllCities:
+                    List<City> cities;
+                    response.Result = Controller.Instance.GetAllCities();
 
+                    break;
+                case Operation.GetAllFaculties:
+                    List<Faculty> faculties;
+                    response.Result = Controller.Instance.GetAllFaculties();
                     break;
             }
             return response;

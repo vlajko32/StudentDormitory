@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BrokerDB\BrokerDB.csproj">
+      <Project>{151CF41B-E932-4CCE-9F05-BC7A16FC9C8F}</Project>
+      <Name>BrokerDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{C8A4F9C3-C281-4A9A-8113-A7502736286A}</Project>
       <Name>Domain</Name>

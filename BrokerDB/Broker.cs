@@ -65,6 +65,7 @@ namespace BrokerDB
 
         public List<IEntity> GetAll(IEntity entity)
         {
+            
             List<IEntity> result = new List<IEntity>();
             SqlCommand command = connection.CreateCommand();
             command.Transaction = transaction;

@@ -9,41 +9,32 @@ using System.Threading.Tasks;
 namespace Domain
 {
     [Serializable]
-    public class User : IEntity
+    public class City: IEntity
     {
-        public int UserID { get; set; }
+        public int CityID { get; set; }
 
-        public string Username { get; set; }
+        public string Name { get; set; }
 
-        public string Password { get; set; }
+        public int PostNumber { get; set; }
 
         [Browsable(false)]
-        public string TableName => "Users";
-
+        public string TableName => "Cities";
         [Browsable(false)]
         public string InsertValues => "";
-
         [Browsable(false)]
         public string IdColumn => "";
-
         [Browsable(false)]
-        public string SelectColumns => "UserID,Username,Password" ;
-
+        public string SelectColumns => "CityID, Name, PostNumber";
         [Browsable(false)]
         public string TableAlias => "";
-
         [Browsable(false)]
         public string JoinTable => "";
-
         [Browsable(false)]
         public string JoinCondition => "";
-
         [Browsable(false)]
         public string JoinTable2 => "";
-
         [Browsable(false)]
         public string JoinCondition2 => "";
-
         [Browsable(false)]
         public string SelectColumnsWhere => "";
 
@@ -54,11 +45,11 @@ namespace Domain
             List<IEntity> entities = new List<IEntity>();
             while(reader.Read())
             {
-                entities.Add(new User
+                entities.Add(new City
                 {
-                    UserID = (int)reader[0],
-                    Username = (string)reader[1],
-                    Password = (string)reader[2]
+                    CityID = (int)reader[0],
+                    Name = (string)reader[1],
+                    PostNumber = (int)reader[2]
                 });
 
             }
@@ -68,6 +59,11 @@ namespace Domain
         public List<object> GetObjectsWhere(SqlDataReader reader)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

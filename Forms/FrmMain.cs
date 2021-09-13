@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace Forms
         public FrmMain()
         {
             InitializeComponent();
+        }
+
+        private void createUC(UserControl userControl)
+        {
+            pnlMain.Controls.Clear();
+            userControl.Parent = pnlMain;
+            userControl.Dock = DockStyle.Fill;
+        }
+
+        private void createResidentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createUC(new UCCreateResident());
         }
     }
 }
