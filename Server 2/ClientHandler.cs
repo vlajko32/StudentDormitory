@@ -67,6 +67,97 @@ namespace Server
                     List<Faculty> faculties;
                     response.Result = Controller.Instance.GetAllFaculties();
                     break;
+                case Operation.CreateResident:
+                    try
+                    {
+                        Resident r = (Resident)request.Data;
+                        Controller.Instance.CreateResident(r);
+                        response.IsSuccessful = true;
+                    }catch(Exception)
+                    {
+                        response.IsSuccessful = false;
+                        throw;
+                    }
+                    break;
+
+                case Operation.GetResidents:
+                    response.Result = Controller.Instance.GetResidents();
+                    break;
+
+                case Operation.GetResidentsWhere:
+                    try
+                    {
+                        object cond = request.Data;
+                        response.Result = Controller.Instance.GetResidentWhere(cond);
+                    }catch(Exception)
+                    {
+                        
+                    }
+                    break;
+
+                case Operation.DeleteResident:
+                    try
+                    {
+                        int ResidentID = (int)request.Data;
+                        Controller.Instance.DeleteResident(ResidentID);
+                    }catch(Exception)
+                    {
+
+                    }
+                    break;
+
+                case Operation.UpdateResident:
+                    try
+                    {
+                        List<object> data = (List<object>)request.Data;
+                        int ResidentID = (int)data[0];
+                        List<string> values = (List<string>)data[1];
+                        Controller.Instance.UpdateResident(ResidentID, values);
+                    }
+                    catch(Exception)
+                    { }
+                    break;
+
+                case Operation.CreateGuest:
+                    try
+                    {
+                        Guest g = (Guest)request.Data;
+                        Controller.Instance.CreateGuest(g);
+                        response.IsSuccessful = true;
+                    }
+                    catch (Exception)
+                    {
+                        response.IsSuccessful = false;
+                        throw;
+                    }                  
+                    break;
+                case Operation.GetGuests:
+                    response.Result = Controller.Instance.GetGuests();
+                    break;
+
+                case Operation.GetGuestsWhere:
+                    try
+                    {
+                        object cond = request.Data;
+                        response.Result = Controller.Instance.GetGuestsWhere(cond);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    break;
+
+                case Operation.DeleteGuest:
+                    try
+                    {
+                        int GuestID = (int)request.Data;
+                        Controller.Instance.DeleteGuest(GuestID);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    break;
             }
             return response;
         }

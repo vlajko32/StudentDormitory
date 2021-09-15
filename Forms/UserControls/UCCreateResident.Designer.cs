@@ -168,6 +168,11 @@ namespace Forms.UserControls
             // nmRoomNumber
             // 
             this.nmRoomNumber.Location = new System.Drawing.Point(206, 241);
+            this.nmRoomNumber.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.nmRoomNumber.Name = "nmRoomNumber";
             this.nmRoomNumber.Size = new System.Drawing.Size(120, 20);
             this.nmRoomNumber.TabIndex = 15;
@@ -203,7 +208,7 @@ namespace Forms.UserControls
             this.Controls.Add(this.cmbCities);
             this.Controls.Add(this.label1);
             this.Name = "UCCreateResident";
-            this.Size = new System.Drawing.Size(400, 406);
+            this.Size = new System.Drawing.Size(699, 406);
             this.Load += new System.EventHandler(this.UCCreateResident_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmRoomNumber)).EndInit();
             this.ResumeLayout(false);

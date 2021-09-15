@@ -43,6 +43,15 @@
   <ItemGroup>
     <Compile Include="CitySO\ReturnCitiesSO.cs" />
     <Compile Include="FacultySO\ReturnFacultiesSO.cs" />
+    <Compile Include="GuestSO\CreateGuestSO.cs" />
+    <Compile Include="GuestSO\DeleteGuestSO.cs" />
+    <Compile Include="GuestSO\GetGuestsWhereSO.cs" />
+    <Compile Include="GuestSO\ReturnGuestsSO.cs" />
+    <Compile Include="ResidentSO\CreateResidentSO.cs" />
+    <Compile Include="ResidentSO\DeleteResidentSO.cs" />
+    <Compile Include="ResidentSO\ReturnResidentsSO.cs" />
+    <Compile Include="ResidentSO\ReturnResidentsWhereSO.cs" />
+    <Compile Include="ResidentSO\UpdateResidentSO.cs" />
     <Compile Include="SystemOperationsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserSO\LoginUserSO.cs" />

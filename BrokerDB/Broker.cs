@@ -51,14 +51,14 @@ namespace BrokerDB
 
         }
 
-        public List<object> GetWhere(IEntity entity, string cond = "")
+        public List<IEntity> GetWhere(IEntity entity, string cond = "")
         {
-            List<object> objects = new List<object>();
+            List<IEntity> objects = new List<IEntity>();
             SqlCommand command = connection.CreateCommand();
             command.Transaction = transaction;
-            command.CommandText = $"select {entity.SelectColumnsWhere} from {entity.TableName} {entity.TableAlias} {entity.JoinTable2} {entity.JoinCondition2} {cond}";
+            command.CommandText = $"select {entity.SelectColumns} from {entity.TableName} {entity.TableAlias} {entity.JoinTable} {entity.JoinCondition} {entity.JoinTable2} {entity.JoinCondition2} {cond}";
             SqlDataReader reader = command.ExecuteReader();
-            objects = entity.GetObjectsWhere(reader);
+            objects = entity.GetEntities(reader);
             reader.Close();
             return objects;
         }
@@ -76,6 +76,42 @@ namespace BrokerDB
             reader.Close();
 
             return result;
+        }
+
+        public void Save(IEntity entity)
+        {
+            SqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = $"insert into {entity.TableName} values ({entity.InsertValues})";
+            command.ExecuteNonQuery();
+        }
+
+        public void Delete(IEntity entity, int id)
+        {
+            SqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = $"delete from {entity.TableName} where {entity.IdColumn} = {id}";
+            command.ExecuteNonQuery();
+        }
+
+        public void Update(IEntity entity, List<string> values, int id)
+        {
+            string updateCommand="";
+            List<string> updateColumns = entity.UpdateValues.Split(' ').ToList();
+            int counter = 0;
+            foreach (var item in updateColumns)
+            {
+                if(counter>0)
+                { updateCommand += ","; }
+                updateCommand += " " + item + " = " + values[counter];
+                counter++;
+                
+            }
+
+            SqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = $"update {entity.TableName} set {updateCommand} from {entity.TableName} {entity.TableAlias} {entity.JoinTable} {entity.JoinCondition} {entity.JoinTable2} {entity.JoinCondition2} where {entity.IdColumn} = {id}";
+            command.ExecuteNonQuery();
         }
     }
 }

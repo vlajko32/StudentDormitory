@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using SystemOperations;
 using SystemOperations.CitySO;
 using SystemOperations.FacultySO;
+using SystemOperations.GuestSO;
+using SystemOperations.ResidentSO;
 using SystemOperations.UserSO;
 
 namespace DBController
@@ -88,6 +90,72 @@ namespace DBController
             List<Faculty> faculties = (List<Faculty>)so.Result;
             
             return faculties;
+
+        }
+
+        public void CreateResident(Resident r)
+        {
+            so = new CreateResidentSO();
+            so.ExecuteTemplate(entity: r);
+
+
+        }
+
+        public object GetResidents()
+        {
+            so = new ReturnResidentsSO();
+            so.ExecuteTemplate(entity: new Resident());
+            List<Resident> residents = (List<Resident>)so.Result;
+            return residents;
+        }
+
+        public object GetResidentWhere(object cond)
+        {
+            so = new ReturnResidentsWhereSO(cond);
+            so.ExecuteTemplate(entity: new Resident());
+            List<Resident> residents = (List<Resident>)so.Result;
+            return residents;
+        }
+
+        public void DeleteResident(int residentID)
+        {
+            so = new DeleteResidentSO(residentID);
+            so.ExecuteTemplate(entity: new Resident());
+
+        }
+
+        public void UpdateResident(int residentID, List<string> values)
+        {
+            so = new UpdateResidentSO(residentID, values);
+            so.ExecuteTemplate(entity: new Resident());
+        }
+
+        public void CreateGuest(Guest g)
+        {
+            so = new CreateGuestSO();
+            so.ExecuteTemplate(entity: g);
+        }
+
+        public object GetGuests()
+        {
+            so = new ReturnGuestsSO();
+            so.ExecuteTemplate(entity: new Guest());
+            List<Guest> guests = (List<Guest>)so.Result;
+            return guests;
+        }
+
+        public object GetGuestsWhere(object cond)
+        {
+            so = new GetGuestsWhereSO(cond);
+            so.ExecuteTemplate(entity: new Guest());
+            List<Guest> guests = (List<Guest>)so.Result;
+            return guests;
+        }
+
+        public void DeleteGuest(int guestID)
+        {
+            so = new DeleteGuestSO(guestID);
+            so.ExecuteTemplate(entity: new Guest());
 
         }
     }

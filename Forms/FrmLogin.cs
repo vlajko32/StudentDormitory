@@ -24,7 +24,7 @@ namespace Forms
             User u = Communication.Communication.Instance.Login(txtUsername, txtPassword);
             if(u!=null)
             {
-                FrmMain frmMain = new FrmMain();
+                FrmMain frmMain = new FrmMain(txtUsername.Text);
                 this.Visible = false;
                 frmMain.ShowDialog();
                 this.Visible = true;

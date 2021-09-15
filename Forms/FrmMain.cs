@@ -13,9 +13,12 @@ namespace Forms
 {
     public partial class FrmMain : Form
     {
-        public FrmMain()
+        string User;
+        public FrmMain(string txtUsername)
         {
             InitializeComponent();
+            User = txtUsername;
+
         }
 
         private void createUC(UserControl userControl)
@@ -28,6 +31,26 @@ namespace Forms
         private void createResidentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             createUC(new UCCreateResident());
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            label1.Text = $"Welcome, {User}!";
+        }
+
+        private void updateResidentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createUC(new UCResidents());
+        }
+
+        private void createGuestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createUC(new UCCreateGuest());
+        }
+
+        private void deleteGuestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createUC(new UCDeleteGuest());
         }
     }
 }

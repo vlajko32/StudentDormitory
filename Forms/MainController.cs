@@ -23,8 +23,14 @@ namespace Forms
             }
             catch(SocketException)
             {
-                MessageBox.Show("Greska pri povezivanju sa serverom");
-                Environment.Exit(0);
+                //MessageBox.Show("Greska pri povezivanju sa serverom");
+                DialogResult result = MessageBox.Show("Do you want to try again?", "Server is not working!", MessageBoxButtons.YesNo);
+                if(result==DialogResult.Yes)
+                { this.Connect(); }
+                else
+                {
+                    Environment.Exit(0);
+                }
             }
         }
     

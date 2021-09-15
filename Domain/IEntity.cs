@@ -22,6 +22,8 @@ namespace Domain
         string SelectColumnsWhere { get; }
         string Where { get; }
 
+        string UpdateValues { get; }
+
         List<IEntity> GetEntities(SqlDataReader reader);
 
         List<object> GetObjectsWhere(SqlDataReader reader);

@@ -35,9 +35,49 @@ namespace Forms.UserControls
 
         }
 
+        private void reset()
+        {
+            txtName.ResetText();
+            txtSurname.ResetText();
+            txtIndex.ResetText();
+            txtCardNumber.ResetText();
+            nmRoomNumber.ResetText();
+
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtSurname.Text)
+                || string.IsNullOrEmpty(txtIndex.Text) || string.IsNullOrEmpty(txtCardNumber.Text)||nmRoomNumber.Value==0)
+            {
+                MessageBox.Show("There are blank fields, please enter all informations.");
+            }
+            else
+            {
+                Resident resident = new Resident
+                {
+
+                    ResidentName = txtName.Text,
+                    ResidentSurname = txtSurname.Text,
+                    IndexNumber = txtIndex.Text,
+                    CardNumber = Convert.ToInt32(txtCardNumber.Text),
+                    RoomNumber = (int)nmRoomNumber.Value,
+                    City = (City)cmbCities.SelectedItem,
+                    Faculty = (Faculty)cmbFaculties.SelectedItem
+
+                };
+
+                try
+                {
+                    Communication.Communication.Instance.SaveResident(resident);
+                    MessageBox.Show("Resident is saved succesfully!");
+                    reset();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

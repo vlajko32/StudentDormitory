@@ -49,6 +49,8 @@ namespace Domain
 
         public string Where => "";
 
+        public string UpdateValues => throw new NotImplementedException();
+
         public List<IEntity> GetEntities(SqlDataReader reader)
         {
             List<IEntity> entities = new List<IEntity>();

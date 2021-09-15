@@ -10,6 +10,15 @@ namespace Common
     {
         Login,
         GetAllCities,
-        GetAllFaculties
+        GetAllFaculties,
+        CreateResident,
+        GetResidents,
+        GetResidentsWhere,
+        DeleteResident,
+        UpdateResident,
+        CreateGuest,
+        GetGuests,
+        GetGuestsWhere,
+        DeleteGuest
     }
 }
