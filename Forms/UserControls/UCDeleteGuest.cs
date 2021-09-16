@@ -19,7 +19,16 @@ namespace Forms.UserControls
 
         private void UCDeleteGuest_Load(object sender, EventArgs e)
         {
-            dgvGuests.DataSource = Communication.Communication.Instance.GetGuests();
+            try
+            {
+                dgvGuests.DataSource = Communication.Communication.Instance.GetGuests();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Server is not working!");
+                this.Dispose();
+            }
+            
         }
 
         private void btnFind_Click(object sender, EventArgs e)

@@ -38,6 +38,7 @@ namespace Forms
             label1.Text = $"Welcome, {User}!";
         }
 
+
         private void updateResidentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             createUC(new UCResidents());
@@ -61,6 +62,16 @@ namespace Forms
         private void updateVisitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             createUC(new UCVisits());
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Communication.Communication.Instance.Disconnect();
         }
     }
 }

@@ -20,7 +20,17 @@ namespace Forms.UserControls
 
         private void UCCreateGuest_Load(object sender, EventArgs e)
         {
-            cmbCities.DataSource = Communication.Communication.Instance.GetCities();
+            try
+            {
+                cmbCities.DataSource = Communication.Communication.Instance.GetCities();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Server is not working!");
+                this.Dispose();
+            }
+
+           
 
         }
 

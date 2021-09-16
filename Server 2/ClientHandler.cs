@@ -182,6 +182,18 @@ namespace Server
                 case Operation.GetVisits:
                     response.Result = Controller.Instance.GetVisits();
                     break;
+                case Operation.DeleteVisit:
+                    try
+                    {
+                        int VisitID = (int)request.Data;
+                        Controller.Instance.DeleteVisit(VisitID);
+                        response.IsSuccessful = true;
+                    }
+                    catch (Exception)
+                    {
+                        response.IsSuccessful = false;
+                    }
+                    break;
             }
             return response;
         }

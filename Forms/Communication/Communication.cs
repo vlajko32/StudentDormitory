@@ -44,6 +44,14 @@ namespace Forms.Communication
             return (List<Visit>)response.Result;
         }
 
+        internal bool DeleteVisit(int value)
+        {
+            Request request = new Request { Operation = Operation.DeleteVisit, Data = value };
+            SendRequest(request);
+            Response response = receiver.Receive();
+            return response.IsSuccessful;
+        }
+
         private Communication()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);

@@ -21,6 +21,7 @@ namespace Common
         GetGuestsWhere,
         DeleteGuest,
         CreateVisit,
-        GetVisits
+        GetVisits,
+        DeleteVisit
     }
 }

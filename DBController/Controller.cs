@@ -186,5 +186,18 @@ namespace DBController
             List<Visit> visits = (List<Visit>)so.Result;
             return visits;
         }
+
+        public void DeleteVisit(int visitID)
+        {
+            try
+            {
+                so = new DeleteGuestSO(visitID);
+                so.ExecuteTemplate(entity: new Visit());
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

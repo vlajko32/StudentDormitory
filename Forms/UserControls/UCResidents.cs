@@ -28,6 +28,7 @@ namespace Forms.UserControls
             }catch(Exception ex)
             {
                 MessageBox.Show("Server is not working!");
+                this.Dispose();
             }
         }
 

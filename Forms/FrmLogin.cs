@@ -35,6 +35,7 @@ namespace Forms
                     FrmMain frmMain = new FrmMain(txtUsername.Text);
                     this.Visible = false;
                     frmMain.ShowDialog();
+                    //Communication.Communication.Instance.Disconnect();
                     this.Visible = true;
 
                 }
@@ -59,7 +60,8 @@ namespace Forms
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(0);
+            
+
         }
     }
 }
