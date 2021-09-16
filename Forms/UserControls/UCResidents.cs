@@ -22,8 +22,13 @@ namespace Forms.UserControls
 
         private void UCResidents_Load(object sender, EventArgs e)
         {
-            
-            dgvResidents.DataSource = Communication.Communication.Instance.GetResidents();
+            try
+            {
+                dgvResidents.DataSource = Communication.Communication.Instance.GetResidents();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Server is not working!");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -63,10 +68,23 @@ namespace Forms.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if(dgvResidents.SelectedRows.Count == 0)
+            {
+                   MessageBox.Show("Guest has not been selected!");
+                   return;
+                
+            }
             string NameSurname = $"{(string)dgvResidents.SelectedRows[0].Cells[1].Value} {(string)dgvResidents.SelectedRows[0].Cells[2].Value}";
-            Communication.Communication.Instance.DeleteResident((int)dgvResidents.SelectedRows[0].Cells[0].Value);
-            dgvResidents.DataSource = Communication.Communication.Instance.GetResidents();
-            MessageBox.Show($"Resident {NameSurname} is deleted!");
+            if (Communication.Communication.Instance.DeleteResident((int)dgvResidents.SelectedRows[0].Cells[0].Value))
+            {
+                dgvResidents.DataSource = Communication.Communication.Instance.GetResidents();
+                MessageBox.Show($"Resident {NameSurname} is deleted!");
+            }
+            else
+            {
+                MessageBox.Show($"Resident {NameSurname} cannot be deleted!");
+            }
+            
         }
 
         private void dgvResidents_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

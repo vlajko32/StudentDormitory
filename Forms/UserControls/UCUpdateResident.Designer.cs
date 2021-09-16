@@ -51,7 +51,7 @@ namespace Forms.UserControls
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(57, 391);
+            this.btnUpdate.Location = new System.Drawing.Point(107, 385);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 32;
@@ -62,7 +62,7 @@ namespace Forms.UserControls
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 141);
+            this.label5.Location = new System.Drawing.Point(104, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 24;
@@ -71,7 +71,7 @@ namespace Forms.UserControls
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 96);
+            this.label4.Location = new System.Drawing.Point(104, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 22;
@@ -81,7 +81,7 @@ namespace Forms.UserControls
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 37);
+            this.label2.Location = new System.Drawing.Point(103, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 21);
             this.label2.TabIndex = 19;
@@ -90,7 +90,7 @@ namespace Forms.UserControls
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(242, 96);
+            this.label1.Location = new System.Drawing.Point(292, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 13);
             this.label1.TabIndex = 17;
@@ -100,7 +100,7 @@ namespace Forms.UserControls
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(129, 37);
+            this.lblHeader.Location = new System.Drawing.Point(179, 28);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(20, 21);
             this.lblHeader.TabIndex = 33;
@@ -110,7 +110,7 @@ namespace Forms.UserControls
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(118, 94);
+            this.lblName.Location = new System.Drawing.Point(168, 88);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 18);
             this.lblName.TabIndex = 34;
@@ -120,7 +120,7 @@ namespace Forms.UserControls
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(118, 141);
+            this.lblSurname.Location = new System.Drawing.Point(168, 135);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(49, 18);
             this.lblSurname.TabIndex = 35;
@@ -130,7 +130,7 @@ namespace Forms.UserControls
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(343, 94);
+            this.lblCity.Location = new System.Drawing.Point(393, 88);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(49, 18);
             this.lblCity.TabIndex = 36;
@@ -138,7 +138,7 @@ namespace Forms.UserControls
             // 
             // nmbRoom
             // 
-            this.nmbRoom.Location = new System.Drawing.Point(168, 208);
+            this.nmbRoom.Location = new System.Drawing.Point(218, 202);
             this.nmbRoom.Maximum = new decimal(new int[] {
             999,
             0,
@@ -151,7 +151,7 @@ namespace Forms.UserControls
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(54, 210);
+            this.label8.Location = new System.Drawing.Point(104, 204);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 38;
@@ -160,7 +160,7 @@ namespace Forms.UserControls
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(242, 143);
+            this.label9.Location = new System.Drawing.Point(292, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 13);
             this.label9.TabIndex = 39;
@@ -170,7 +170,7 @@ namespace Forms.UserControls
             // 
             this.lblCardNumber.AutoSize = true;
             this.lblCardNumber.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardNumber.Location = new System.Drawing.Point(343, 143);
+            this.lblCardNumber.Location = new System.Drawing.Point(393, 137);
             this.lblCardNumber.Name = "lblCardNumber";
             this.lblCardNumber.Size = new System.Drawing.Size(56, 18);
             this.lblCardNumber.TabIndex = 40;
@@ -179,7 +179,7 @@ namespace Forms.UserControls
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(54, 266);
+            this.label11.Location = new System.Drawing.Point(104, 260);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 41;
@@ -188,7 +188,7 @@ namespace Forms.UserControls
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(54, 314);
+            this.label12.Location = new System.Drawing.Point(104, 308);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 13);
             this.label12.TabIndex = 42;
@@ -197,14 +197,14 @@ namespace Forms.UserControls
             // cmbFaculty
             // 
             this.cmbFaculty.FormattingEnabled = true;
-            this.cmbFaculty.Location = new System.Drawing.Point(167, 263);
+            this.cmbFaculty.Location = new System.Drawing.Point(217, 257);
             this.cmbFaculty.Name = "cmbFaculty";
             this.cmbFaculty.Size = new System.Drawing.Size(121, 21);
             this.cmbFaculty.TabIndex = 43;
             // 
             // txtIndex
             // 
-            this.txtIndex.Location = new System.Drawing.Point(167, 314);
+            this.txtIndex.Location = new System.Drawing.Point(217, 308);
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(100, 20);
             this.txtIndex.TabIndex = 44;
@@ -231,7 +231,7 @@ namespace Forms.UserControls
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UCUpdateResident";
-            this.Size = new System.Drawing.Size(450, 466);
+            this.Size = new System.Drawing.Size(638, 424);
             ((System.ComponentModel.ISupportInitialize)(this.nmbRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

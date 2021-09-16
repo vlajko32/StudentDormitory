@@ -67,6 +67,7 @@ namespace Server
                     List<Faculty> faculties;
                     response.Result = Controller.Instance.GetAllFaculties();
                     break;
+
                 case Operation.CreateResident:
                     try
                     {
@@ -76,7 +77,7 @@ namespace Server
                     }catch(Exception)
                     {
                         response.IsSuccessful = false;
-                        throw;
+                        
                     }
                     break;
 
@@ -89,6 +90,7 @@ namespace Server
                     {
                         object cond = request.Data;
                         response.Result = Controller.Instance.GetResidentWhere(cond);
+                        response.IsSuccessful = true;
                     }catch(Exception)
                     {
                         
@@ -100,9 +102,10 @@ namespace Server
                     {
                         int ResidentID = (int)request.Data;
                         Controller.Instance.DeleteResident(ResidentID);
+                        response.IsSuccessful = true;
                     }catch(Exception)
                     {
-
+                        response.IsSuccessful = false;
                     }
                     break;
 
@@ -113,9 +116,13 @@ namespace Server
                         int ResidentID = (int)data[0];
                         List<string> values = (List<string>)data[1];
                         Controller.Instance.UpdateResident(ResidentID, values);
+                        response.IsSuccessful = true;
                     }
                     catch(Exception)
-                    { }
+                    {
+                        response.IsSuccessful = false;
+         
+                    }
                     break;
 
                 case Operation.CreateGuest:
@@ -128,7 +135,7 @@ namespace Server
                     catch (Exception)
                     {
                         response.IsSuccessful = false;
-                        throw;
+                        
                     }                  
                     break;
                 case Operation.GetGuests:
@@ -152,11 +159,28 @@ namespace Server
                     {
                         int GuestID = (int)request.Data;
                         Controller.Instance.DeleteGuest(GuestID);
+                        response.IsSuccessful = true;
                     }
                     catch (Exception)
                     {
-
+                        response.IsSuccessful = false;
                     }
+                    break;
+                case Operation.CreateVisit:
+                    try
+                    {
+                        Visit v = (Visit)request.Data;
+                        Controller.Instance.CreateVisit(v);
+                        response.IsSuccessful = true;
+                    }
+                    catch (Exception)
+                    {
+                        response.IsSuccessful = false;
+                        throw;
+                    }
+                    break;
+                case Operation.GetVisits:
+                    response.Result = Controller.Instance.GetVisits();
                     break;
             }
             return response;

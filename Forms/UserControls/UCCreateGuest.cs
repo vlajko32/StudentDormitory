@@ -39,6 +39,19 @@ namespace Forms.UserControls
                 || string.IsNullOrEmpty(txtIndex.Text) || string.IsNullOrEmpty(txtCardNumber.Text))
             { 
                 MessageBox.Show("There are blank fields, please enter all informations.");
+                return;
+            }
+            if (!int.TryParse(txtCardNumber.Text, out int nmb))
+            {
+                MessageBox.Show("Card number can't contain letters!");
+                txtCardNumber.BackColor = Color.LightPink;
+                return;
+            }
+            if (!txtIndex.Text.Contains("/"))
+            {
+                MessageBox.Show("Bad index format!");
+                txtIndex.BackColor = Color.LightPink;
+                return;
             }
             Guest guest = new Guest
             {

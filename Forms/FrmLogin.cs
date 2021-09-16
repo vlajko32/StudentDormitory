@@ -21,25 +21,45 @@ namespace Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            User u = Communication.Communication.Instance.Login(txtUsername, txtPassword);
-            if(u!=null)
-            {
-                FrmMain frmMain = new FrmMain(txtUsername.Text);
-                this.Visible = false;
-                frmMain.ShowDialog();
-                this.Visible = true;
-
-            }
-            else
-            {
-                MessageBox.Show("Korisnik sa datim username-om i password-om ne postoji!");
+            try { Communication.Communication.Instance.Connect(); }
+            catch (Exception)
+            { 
+                MessageBox.Show("Error while communicating with server");
                 return;
             }
+            try
+            {
+                User u = Communication.Communication.Instance.Login(txtUsername, txtPassword);
+                if (u != null)
+                {
+                    FrmMain frmMain = new FrmMain(txtUsername.Text);
+                    this.Visible = false;
+                    frmMain.ShowDialog();
+                    this.Visible = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!");
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Server does not work!");
+               
+            }
+            
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            main.Connect();
+            //Communication.Communication.Instance.Connect();
+        }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

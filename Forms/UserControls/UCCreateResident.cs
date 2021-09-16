@@ -24,8 +24,16 @@ namespace Forms.UserControls
 
         private void UCCreateResident_Load(object sender, EventArgs e)
         {
-            cmbCities.DataSource = Communication.Communication.Instance.GetCities();
-            cmbFaculties.DataSource = Communication.Communication.Instance.GetFaculties();
+            try
+            {
+                cmbCities.DataSource = Communication.Communication.Instance.GetCities();
+                cmbFaculties.DataSource = Communication.Communication.Instance.GetFaculties();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Server is not working!");
+                this.Dispose();
+            }
         }
 
       
@@ -47,13 +55,28 @@ namespace Forms.UserControls
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtSurname.Text)
                 || string.IsNullOrEmpty(txtIndex.Text) || string.IsNullOrEmpty(txtCardNumber.Text)||nmRoomNumber.Value==0)
             {
                 MessageBox.Show("There are blank fields, please enter all informations.");
+                return;
             }
-            else
+            if (!int.TryParse(txtCardNumber.Text,out int nmb))
             {
+                MessageBox.Show("Card number can't contain letters!");
+                txtCardNumber.BackColor = Color.LightPink;
+                return;
+            }
+            if(!txtIndex.Text.Contains("/"))
+            {
+                MessageBox.Show("Bad index format!");
+                txtIndex.BackColor = Color.LightPink;
+                return;
+            }
+
+            
+            
                 Resident resident = new Resident
                 {
 
@@ -69,15 +92,25 @@ namespace Forms.UserControls
 
                 try
                 {
-                    Communication.Communication.Instance.SaveResident(resident);
+                if (Communication.Communication.Instance.SaveResident(resident))
+                {
                     MessageBox.Show("Resident is saved succesfully!");
+
                     reset();
+                }
+                else
+                {
+                    MessageBox.Show("Resident is not saved!");
+                }
+                
+                    
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                MessageBox.Show("Error while communicating with server!");
+               
                 }
-            }
+            
         }
     }
 }

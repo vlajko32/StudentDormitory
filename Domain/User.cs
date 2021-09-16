@@ -18,6 +18,30 @@ namespace Domain
         public string Password { get; set; }
 
         [Browsable(false)]
+        public string SelectColumns => "UserID,Username,Password";
+
+        public List<IEntity> GetEntities(SqlDataReader reader)
+        {
+            List<IEntity> entities = new List<IEntity>();
+            while (reader.Read())
+            {
+                entities.Add(new User
+                {
+                    UserID = (int)reader[0],
+                    Username = (string)reader[1],
+                    Password = (string)reader[2]
+                });
+
+            }
+            return entities;
+        }
+
+        public List<object> GetObjectsWhere(SqlDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
+
+        [Browsable(false)]
         public string TableName => "Users";
 
         [Browsable(false)]
@@ -26,8 +50,7 @@ namespace Domain
         [Browsable(false)]
         public string IdColumn => "";
 
-        [Browsable(false)]
-        public string SelectColumns => "UserID,Username,Password" ;
+        
 
         [Browsable(false)]
         public string TableAlias => "";
@@ -46,30 +69,11 @@ namespace Domain
 
         [Browsable(false)]
         public string SelectColumnsWhere => "";
-
+        [Browsable(false)]
         public string Where => "";
+        [Browsable(false)]
+        public string UpdateValues => "";
 
-        public string UpdateValues => throw new NotImplementedException();
-
-        public List<IEntity> GetEntities(SqlDataReader reader)
-        {
-            List<IEntity> entities = new List<IEntity>();
-            while(reader.Read())
-            {
-                entities.Add(new User
-                {
-                    UserID = (int)reader[0],
-                    Username = (string)reader[1],
-                    Password = (string)reader[2]
-                });
-
-            }
-            return entities;
-        }
-
-        public List<object> GetObjectsWhere(SqlDataReader reader)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

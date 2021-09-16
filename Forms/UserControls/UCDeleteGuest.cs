@@ -38,10 +38,22 @@ namespace Forms.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string deleted = $"{(string)dgvGuests.SelectedRows[0].Cells[1].Value} {(int)dgvGuests.SelectedRows[0].Cells[2].Value}";
-            Communication.Communication.Instance.DeleteGuests((int)dgvGuests.SelectedRows[0].Cells[0].Value);
-            MessageBox.Show($"Guest {deleted} is deleted!");
-            dgvGuests.DataSource = Communication.Communication.Instance.GetGuests();
+            if (dgvGuests.SelectedRows.Count ==0)
+            {
+                MessageBox.Show("Guest has not been selected!");
+                return;
+            }
+            string deleted = $"{(string)dgvGuests.SelectedRows[0].Cells[1].Value} {(string)dgvGuests.SelectedRows[0].Cells[2].Value}";
+            if(Communication.Communication.Instance.DeleteGuests((int)dgvGuests.SelectedRows[0].Cells[0].Value))
+            {
+                MessageBox.Show($"Guest {deleted} is deleted!");
+                dgvGuests.DataSource = Communication.Communication.Instance.GetGuests();
+            }
+            else
+            {
+                MessageBox.Show($"Guest {deleted} cannot be deleted!");
+            }
+           
         }
     }
 }

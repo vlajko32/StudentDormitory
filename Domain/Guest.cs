@@ -76,5 +76,10 @@ namespace Domain
         {
             throw new NotImplementedException();
         }
+
+        public override string ToString()
+        {
+            return $"{GuestName} {GuestSurname}";
+        }
     }
 }

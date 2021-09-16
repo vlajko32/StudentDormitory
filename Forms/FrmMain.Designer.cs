@@ -69,14 +69,14 @@ namespace Forms
             // createResidentToolStripMenuItem
             // 
             this.createResidentToolStripMenuItem.Name = "createResidentToolStripMenuItem";
-            this.createResidentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createResidentToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.createResidentToolStripMenuItem.Text = "Create resident";
             this.createResidentToolStripMenuItem.Click += new System.EventHandler(this.createResidentToolStripMenuItem_Click);
             // 
             // updateResidentToolStripMenuItem
             // 
             this.updateResidentToolStripMenuItem.Name = "updateResidentToolStripMenuItem";
-            this.updateResidentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateResidentToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.updateResidentToolStripMenuItem.Text = "All residents";
             this.updateResidentToolStripMenuItem.Click += new System.EventHandler(this.updateResidentToolStripMenuItem_Click);
             // 
@@ -92,14 +92,14 @@ namespace Forms
             // createGuestToolStripMenuItem
             // 
             this.createGuestToolStripMenuItem.Name = "createGuestToolStripMenuItem";
-            this.createGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createGuestToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.createGuestToolStripMenuItem.Text = "Create guest";
             this.createGuestToolStripMenuItem.Click += new System.EventHandler(this.createGuestToolStripMenuItem_Click);
             // 
             // deleteGuestToolStripMenuItem
             // 
             this.deleteGuestToolStripMenuItem.Name = "deleteGuestToolStripMenuItem";
-            this.deleteGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteGuestToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.deleteGuestToolStripMenuItem.Text = "Delete guest";
             this.deleteGuestToolStripMenuItem.Click += new System.EventHandler(this.deleteGuestToolStripMenuItem_Click);
             // 
@@ -117,17 +117,19 @@ namespace Forms
             this.createVisitToolStripMenuItem.Name = "createVisitToolStripMenuItem";
             this.createVisitToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.createVisitToolStripMenuItem.Text = "Create visit";
+            this.createVisitToolStripMenuItem.Click += new System.EventHandler(this.createVisitToolStripMenuItem_Click);
             // 
             // updateVisitToolStripMenuItem
             // 
             this.updateVisitToolStripMenuItem.Name = "updateVisitToolStripMenuItem";
-            this.updateVisitToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.updateVisitToolStripMenuItem.Text = "Update visit";
+            this.updateVisitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateVisitToolStripMenuItem.Text = "See visits";
+            this.updateVisitToolStripMenuItem.Click += new System.EventHandler(this.updateVisitToolStripMenuItem_Click);
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.label1);
-            this.pnlMain.Location = new System.Drawing.Point(123, 27);
+            this.pnlMain.Location = new System.Drawing.Point(67, 27);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(638, 424);
             this.pnlMain.TabIndex = 1;
@@ -135,10 +137,10 @@ namespace Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mistral", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(425, 352);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 22);
+            this.label1.Size = new System.Drawing.Size(57, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 

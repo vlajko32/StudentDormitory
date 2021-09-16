@@ -42,6 +42,8 @@ namespace SystemOperations
             catch (Exception)
             {
                 broker.Rollback();
+                throw;
+               
 
             }
             finally

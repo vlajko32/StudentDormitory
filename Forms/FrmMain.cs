@@ -52,5 +52,15 @@ namespace Forms
         {
             createUC(new UCDeleteGuest());
         }
+
+        private void createVisitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createUC(new UCCreateVisit());
+        }
+
+        private void updateVisitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createUC(new UCVisits());
+        }
     }
 }

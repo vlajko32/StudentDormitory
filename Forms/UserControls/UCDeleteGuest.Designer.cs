@@ -41,7 +41,7 @@ namespace Forms.UserControls
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(388, 166);
+            this.btnDelete.Location = new System.Drawing.Point(458, 163);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 19;
@@ -51,7 +51,7 @@ namespace Forms.UserControls
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(388, 95);
+            this.btnFind.Location = new System.Drawing.Point(458, 76);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 18;
@@ -79,7 +79,7 @@ namespace Forms.UserControls
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 35);
+            this.label1.Location = new System.Drawing.Point(305, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 24);
             this.label1.TabIndex = 11;
@@ -88,7 +88,7 @@ namespace Forms.UserControls
             // dgvGuests
             // 
             this.dgvGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGuests.Location = new System.Drawing.Point(90, 204);
+            this.dgvGuests.Location = new System.Drawing.Point(90, 192);
             this.dgvGuests.MultiSelect = false;
             this.dgvGuests.Name = "dgvGuests";
             this.dgvGuests.Size = new System.Drawing.Size(430, 221);
@@ -96,7 +96,7 @@ namespace Forms.UserControls
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(388, 124);
+            this.btnReset.Location = new System.Drawing.Point(458, 115);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 20;
@@ -116,7 +116,7 @@ namespace Forms.UserControls
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvGuests);
             this.Name = "UCDeleteGuest";
-            this.Size = new System.Drawing.Size(606, 461);
+            this.Size = new System.Drawing.Size(638, 424);
             this.Load += new System.EventHandler(this.UCDeleteGuest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuests)).EndInit();
             this.ResumeLayout(false);

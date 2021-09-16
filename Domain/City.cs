@@ -25,6 +25,21 @@ namespace Domain
         public string IdColumn => "";
         [Browsable(false)]
         public string SelectColumns => "CityID, Name, PostNumber";
+        public List<IEntity> GetEntities(SqlDataReader reader)
+        {
+            List<IEntity> entities = new List<IEntity>();
+            while (reader.Read())
+            {
+                entities.Add(new City
+                {
+                    CityID = (int)reader[0],
+                    Name = (string)reader[1],
+                    PostNumber = (int)reader[2]
+                });
+
+            }
+            return entities;
+        }
         [Browsable(false)]
         public string TableAlias => "";
         [Browsable(false)]
@@ -42,21 +57,7 @@ namespace Domain
 
         public string UpdateValues => throw new NotImplementedException();
 
-        public List<IEntity> GetEntities(SqlDataReader reader)
-        {
-            List<IEntity> entities = new List<IEntity>();
-            while(reader.Read())
-            {
-                entities.Add(new City
-                {
-                    CityID = (int)reader[0],
-                    Name = (string)reader[1],
-                    PostNumber = (int)reader[2]
-                });
-
-            }
-            return entities;
-        }
+       
 
         public List<object> GetObjectsWhere(SqlDataReader reader)
         {

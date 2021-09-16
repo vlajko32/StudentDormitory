@@ -45,7 +45,7 @@ namespace Forms.UserControls
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(114, 315);
+            this.btnCreate.Location = new System.Drawing.Point(233, 321);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 32;
@@ -55,7 +55,7 @@ namespace Forms.UserControls
             // 
             // txtCardNumber
             // 
-            this.txtCardNumber.Location = new System.Drawing.Point(202, 200);
+            this.txtCardNumber.Location = new System.Drawing.Point(321, 206);
             this.txtCardNumber.Name = "txtCardNumber";
             this.txtCardNumber.Size = new System.Drawing.Size(100, 20);
             this.txtCardNumber.TabIndex = 29;
@@ -63,7 +63,7 @@ namespace Forms.UserControls
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(111, 203);
+            this.label6.Location = new System.Drawing.Point(230, 209);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 28;
@@ -71,7 +71,7 @@ namespace Forms.UserControls
             // 
             // txtIndex
             // 
-            this.txtIndex.Location = new System.Drawing.Point(202, 162);
+            this.txtIndex.Location = new System.Drawing.Point(321, 168);
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(100, 20);
             this.txtIndex.TabIndex = 27;
@@ -79,7 +79,7 @@ namespace Forms.UserControls
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(111, 165);
+            this.label7.Location = new System.Drawing.Point(230, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 26;
@@ -87,7 +87,7 @@ namespace Forms.UserControls
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(202, 117);
+            this.txtSurname.Location = new System.Drawing.Point(321, 123);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 20);
             this.txtSurname.TabIndex = 25;
@@ -95,7 +95,7 @@ namespace Forms.UserControls
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(111, 120);
+            this.label5.Location = new System.Drawing.Point(230, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 24;
@@ -103,7 +103,7 @@ namespace Forms.UserControls
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(202, 76);
+            this.txtName.Location = new System.Drawing.Point(321, 82);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 23;
@@ -111,7 +111,7 @@ namespace Forms.UserControls
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 79);
+            this.label4.Location = new System.Drawing.Point(230, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 22;
@@ -121,7 +121,7 @@ namespace Forms.UserControls
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 19);
+            this.label2.Location = new System.Drawing.Point(259, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 21);
             this.label2.TabIndex = 19;
@@ -130,7 +130,7 @@ namespace Forms.UserControls
             // cmbCities
             // 
             this.cmbCities.FormattingEnabled = true;
-            this.cmbCities.Location = new System.Drawing.Point(202, 249);
+            this.cmbCities.Location = new System.Drawing.Point(321, 255);
             this.cmbCities.Name = "cmbCities";
             this.cmbCities.Size = new System.Drawing.Size(121, 21);
             this.cmbCities.TabIndex = 18;
@@ -138,7 +138,7 @@ namespace Forms.UserControls
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 252);
+            this.label1.Location = new System.Drawing.Point(230, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 17;
@@ -161,7 +161,7 @@ namespace Forms.UserControls
             this.Controls.Add(this.cmbCities);
             this.Controls.Add(this.label1);
             this.Name = "UCCreateGuest";
-            this.Size = new System.Drawing.Size(505, 454);
+            this.Size = new System.Drawing.Size(638, 424);
             this.Load += new System.EventHandler(this.UCCreateGuest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

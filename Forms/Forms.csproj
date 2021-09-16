@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Communication\Communication.cs" />
+    <Compile Include="Exceptions\ServerException.cs" />
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,12 @@
     <Compile Include="UserControls\UCCreateResident.Designer.cs">
       <DependentUpon>UCCreateResident.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCCreateVisit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCCreateVisit.Designer.cs">
+      <DependentUpon>UCCreateVisit.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCDeleteGuest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +98,12 @@
     </Compile>
     <Compile Include="UserControls\UCUpdateResident.Designer.cs">
       <DependentUpon>UCUpdateResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCVisits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCVisits.Designer.cs">
+      <DependentUpon>UCVisits.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -113,6 +126,9 @@
     <EmbeddedResource Include="UserControls\UCCreateResident.resx">
       <DependentUpon>UCCreateResident.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCCreateVisit.resx">
+      <DependentUpon>UCCreateVisit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDeleteGuest.resx">
       <DependentUpon>UCDeleteGuest.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCUpdateResident.resx">
       <DependentUpon>UCUpdateResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCVisits.resx">
+      <DependentUpon>UCVisits.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

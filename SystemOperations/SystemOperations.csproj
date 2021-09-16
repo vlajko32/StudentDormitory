@@ -55,6 +55,8 @@
     <Compile Include="SystemOperationsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserSO\LoginUserSO.cs" />
+    <Compile Include="VisitSO\CreateVisitSO.cs" />
+    <Compile Include="VisitSO\ReturnVisitsSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrokerDB\BrokerDB.csproj">

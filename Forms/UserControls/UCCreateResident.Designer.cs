@@ -51,7 +51,7 @@ namespace Forms.UserControls
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 290);
+            this.label1.Location = new System.Drawing.Point(199, 293);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@ namespace Forms.UserControls
             // cmbCities
             // 
             this.cmbCities.FormattingEnabled = true;
-            this.cmbCities.Location = new System.Drawing.Point(206, 287);
+            this.cmbCities.Location = new System.Drawing.Point(324, 290);
             this.cmbCities.Name = "cmbCities";
             this.cmbCities.Size = new System.Drawing.Size(121, 21);
             this.cmbCities.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace Forms.UserControls
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 25);
+            this.label2.Location = new System.Drawing.Point(255, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace Forms.UserControls
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(115, 334);
+            this.label3.Location = new System.Drawing.Point(199, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace Forms.UserControls
             // cmbFaculties
             // 
             this.cmbFaculties.FormattingEnabled = true;
-            this.cmbFaculties.Location = new System.Drawing.Point(206, 331);
+            this.cmbFaculties.Location = new System.Drawing.Point(324, 334);
             this.cmbFaculties.Name = "cmbFaculties";
             this.cmbFaculties.Size = new System.Drawing.Size(175, 21);
             this.cmbFaculties.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace Forms.UserControls
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(115, 85);
+            this.label4.Location = new System.Drawing.Point(199, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 5;
@@ -103,14 +103,14 @@ namespace Forms.UserControls
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(206, 82);
+            this.txtName.Location = new System.Drawing.Point(324, 85);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 6;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(206, 123);
+            this.txtSurname.Location = new System.Drawing.Point(324, 126);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 20);
             this.txtSurname.TabIndex = 8;
@@ -118,7 +118,7 @@ namespace Forms.UserControls
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(115, 126);
+            this.label5.Location = new System.Drawing.Point(199, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 7;
@@ -126,7 +126,7 @@ namespace Forms.UserControls
             // 
             // txtCardNumber
             // 
-            this.txtCardNumber.Location = new System.Drawing.Point(206, 206);
+            this.txtCardNumber.Location = new System.Drawing.Point(324, 209);
             this.txtCardNumber.Name = "txtCardNumber";
             this.txtCardNumber.Size = new System.Drawing.Size(100, 20);
             this.txtCardNumber.TabIndex = 12;
@@ -134,7 +134,7 @@ namespace Forms.UserControls
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(115, 209);
+            this.label6.Location = new System.Drawing.Point(199, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 11;
@@ -142,7 +142,7 @@ namespace Forms.UserControls
             // 
             // txtIndex
             // 
-            this.txtIndex.Location = new System.Drawing.Point(206, 168);
+            this.txtIndex.Location = new System.Drawing.Point(324, 171);
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(100, 20);
             this.txtIndex.TabIndex = 10;
@@ -150,7 +150,7 @@ namespace Forms.UserControls
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(115, 171);
+            this.label7.Location = new System.Drawing.Point(199, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 9;
@@ -159,7 +159,7 @@ namespace Forms.UserControls
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(115, 243);
+            this.label8.Location = new System.Drawing.Point(199, 246);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 13;
@@ -167,7 +167,7 @@ namespace Forms.UserControls
             // 
             // nmRoomNumber
             // 
-            this.nmRoomNumber.Location = new System.Drawing.Point(206, 241);
+            this.nmRoomNumber.Location = new System.Drawing.Point(324, 244);
             this.nmRoomNumber.Maximum = new decimal(new int[] {
             999,
             0,
@@ -179,7 +179,7 @@ namespace Forms.UserControls
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(118, 371);
+            this.btnCreate.Location = new System.Drawing.Point(236, 374);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 16;
@@ -208,7 +208,7 @@ namespace Forms.UserControls
             this.Controls.Add(this.cmbCities);
             this.Controls.Add(this.label1);
             this.Name = "UCCreateResident";
-            this.Size = new System.Drawing.Size(699, 406);
+            this.Size = new System.Drawing.Size(638, 424);
             this.Load += new System.EventHandler(this.UCCreateResident_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmRoomNumber)).EndInit();
             this.ResumeLayout(false);

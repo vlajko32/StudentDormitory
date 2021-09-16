@@ -11,6 +11,7 @@ using SystemOperations.FacultySO;
 using SystemOperations.GuestSO;
 using SystemOperations.ResidentSO;
 using SystemOperations.UserSO;
+using SystemOperations.VisitSO;
 
 namespace DBController
 {
@@ -119,8 +120,14 @@ namespace DBController
 
         public void DeleteResident(int residentID)
         {
-            so = new DeleteResidentSO(residentID);
-            so.ExecuteTemplate(entity: new Resident());
+            try
+            {
+                so = new DeleteResidentSO(residentID);
+                so.ExecuteTemplate(entity: new Resident());
+            } catch(Exception)
+            {
+                throw;
+            }
 
         }
 
@@ -154,9 +161,30 @@ namespace DBController
 
         public void DeleteGuest(int guestID)
         {
-            so = new DeleteGuestSO(guestID);
-            so.ExecuteTemplate(entity: new Guest());
+            try
+            {
+                so = new DeleteGuestSO(guestID);
+                so.ExecuteTemplate(entity: new Guest());
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
 
+        }
+
+        public void CreateVisit(Visit v)
+        {
+            so = new CreateVisitSO();
+            so.ExecuteTemplate(entity: v);
+        }
+
+        public object GetVisits()
+        {
+            so = new ReturnVisitsSO();
+            so.ExecuteTemplate(entity: new Visit());
+            List<Visit> visits = (List<Visit>)so.Result;
+            return visits;
         }
     }
 }

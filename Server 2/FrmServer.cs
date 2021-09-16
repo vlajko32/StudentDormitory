@@ -38,17 +38,29 @@ namespace Server
                 thread.IsBackground = true;
                 btnStart.Enabled = false;
                 btnStop.Enabled = true;
-            } catch(SocketException ex)
+                label1.Text = "Server is running!";
+                label1.Visible = true;
+                server.Users.ListChanged += Users_ListChanged;
+
+            }
+            catch (SocketException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-    }
+        }
+
+        private void Users_ListChanged(object sender, ListChangedEventArgs e)
+        {
+
+            dgvUsers.Invoke(new Action(() => dgvUsers.DataSource = server.Users.ToList()));
+        }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             server.Stop();
             btnStart.Enabled = true;
             btnStop.Enabled = false;
+            label1.Visible = false;
         }
     }
 }

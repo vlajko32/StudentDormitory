@@ -1,7 +1,9 @@
 ﻿using Common;
 using Domain;
+using Forms.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -17,6 +19,31 @@ namespace Forms.Communication
         private Sender sender;
         private Receiver receiver;
 
+        public void SendRequest(Request request)
+        {
+            try
+            {
+                sender.Send(request);
+            }
+            catch (IOException ex)
+            {
+                throw new ServerException(ex.Message);
+            }
+            catch (SocketException ex)
+            {
+
+                throw new ServerException(ex.Message);
+            }
+        }
+
+        internal object GetVisits()
+        {
+            Request request = new Request { Operation = Operation.GetVisits };
+            SendRequest(request);
+            Response response = receiver.Receive();
+            return (List<Visit>)response.Result;
+        }
+
         private Communication()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -26,7 +53,7 @@ namespace Forms.Communication
         internal object GetGuests()
         {
             Request request = new Request { Operation = Operation.GetGuests };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return (List<Guest>)response.Result; 
         }
@@ -34,7 +61,7 @@ namespace Forms.Communication
         internal object GetGuestsWhere(string cond)
         {
             Request request = new Request { Operation = Operation.GetGuestsWhere, Data = cond };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return (List<Guest>)response.Result;
         }
@@ -46,18 +73,26 @@ namespace Forms.Communication
             receiver = new Receiver(socket);
         }
 
-        internal void DeleteGuests(int value)
+        internal bool CreateVisit(Visit v)
+        {
+            Request request = new Request { Operation = Operation.CreateVisit, Data = v };
+            SendRequest(request);
+            Response response = receiver.Receive();
+            return response.IsSuccessful;
+        }
+
+        internal bool DeleteGuests(int value)
         {
             Request request = new Request { Operation = Operation.DeleteGuest, Data = value };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
-            return;
+            return response.IsSuccessful;
         }
 
         internal object GetFaculties()
         {
             Request request = new Request { Operation = Operation.GetAllFaculties };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return (List<Faculty>)response.Result;
         }
@@ -65,7 +100,7 @@ namespace Forms.Communication
         internal void SaveGuest(Guest guest)
         {
             Request request = new Request { Operation = Operation.CreateGuest, Data = guest };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return;
         }
@@ -75,24 +110,27 @@ namespace Forms.Communication
             try
             {
                 Request request = new Request { Operation = Operation.GetResidents };
-                sender.Send(request);
+                SendRequest(request);
                 Response response = receiver.Receive();
                 return (List<Resident>)response.Result;
+            }catch(Exception)
+            {
+                throw;
             }
         }
 
-        internal void DeleteResident(int DeletedID)
+        internal bool DeleteResident(int DeletedID)
         {
             Request request = new Request { Operation = Operation.DeleteResident, Data = DeletedID };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
-            return;
+            return response.IsSuccessful;
         }
 
         internal void UpdateResident(int residentID, List<string> values)
         {
             Request request = new Request { Operation = Operation.UpdateResident, Data = new List<object> { residentID, values } };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return;
         }
@@ -100,7 +138,7 @@ namespace Forms.Communication
         internal object GetResidentsWhere(object cond)
         {
             Request request = new Request { Operation = Operation.GetResidentsWhere, Data =  cond};
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return (List<Resident>)response.Result;
         }
@@ -108,7 +146,7 @@ namespace Forms.Communication
         internal object GetCities()
         {
             Request request = new Request { Operation = Operation.GetAllCities };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return (List<City>)response.Result;
         }
@@ -117,24 +155,24 @@ namespace Forms.Communication
         {
             Request request = new Request { Operation = Operation.Login, 
                 Data = new User { Username = txtUsername.Text, Password = txtPassword.Text } };
-            sender.Send(request);
+            SendRequest(request);
             Response response = receiver.Receive();
             return (User)response.Result;
 
         }
 
-        internal void SaveResident(Resident resident)
+        internal bool SaveResident(Resident resident)
         {
             try
             {
                 Request request = new Request { Operation = Operation.CreateResident, Data = resident };
-                sender.Send(request);
+                SendRequest(request);
                 Response response = receiver.Receive();
-                return;
+                return response.IsSuccessful;
             }
             catch(Exception ex)
             {
-                
+                throw;
             }
         }
 
@@ -148,6 +186,12 @@ namespace Forms.Communication
                 }
                 return instance;
             }
+        }
+
+        internal void Disconnect()
+        {
+            socket.Close();
+            socket = null;
         }
     }
 }

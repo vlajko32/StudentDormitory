@@ -22,6 +22,21 @@ namespace Domain
         public string IdColumn => "";
 
         public string SelectColumns => "FacultyID, FacultyName, University";
+        public List<IEntity> GetEntities(SqlDataReader reader)
+        {
+            List<IEntity> entities = new List<IEntity>();
+            while (reader.Read())
+            {
+                entities.Add(new Faculty
+                {
+                    FacultyID = (int)reader[0],
+                    FacultyName = (string)reader[1],
+                    UniversityName = (string)reader[2]
+                });
+
+            }
+            return entities;
+        }
 
         public string TableAlias => "";
 
@@ -39,21 +54,7 @@ namespace Domain
 
         public string UpdateValues => throw new NotImplementedException();
 
-        public List<IEntity> GetEntities(SqlDataReader reader)
-        {
-            List<IEntity> entities = new List<IEntity>();
-            while (reader.Read())
-            {
-                entities.Add(new Faculty
-                {
-                    FacultyID = (int)reader[0],
-                    FacultyName = (string)reader[1],
-                    UniversityName = (string)reader[2]
-                });
-
-            }
-            return entities;
-        }
+       
 
         public List<object> GetObjectsWhere(SqlDataReader reader)
         {
